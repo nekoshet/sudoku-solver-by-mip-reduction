@@ -5,7 +5,7 @@ A sudoku solver based on a reduction to Integer Programming. Written in Python. 
 1. Make sure you have Python MIP installed
 2. Create a text file representing your sudoku. The file must have 9 lines, each line having 9 characters + end-of-line char ('\n'). Use digits to represent a square with a predefined digit and '-' to represent empty squares.
 3. Replace the path in 'f.open(...)' with your file's path.
-4. Run the script using python
+4. Run the script using python 3
 
 # How it works
 The script creates an Integer Program representing this specific sudoku problem. The program has 9*9*9 binary variables - a binary variable for each square and digit, representing whether this square is filled with this digit or not. The constraints are as follows:
