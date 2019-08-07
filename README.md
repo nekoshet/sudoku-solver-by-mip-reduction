@@ -15,8 +15,7 @@ The program creates an Integer Program representing this specific sudoku problem
 4. Each 3x3 'box' must not contain the same digit more than once.
 5. Each square with a predefined digit in the sudoku file must contain this digit.
 
-The object function is irelevant. The object is to find a feasible solution to the program.
-The model is tuned to stop after finding a feasible solution.
+The objective function is irelevant. The goal is to find a feasible solution to the program and the model is tuned to stop after finding a feasible solution.
 
 The model is then optimized using python MIP, and the result is printed to the screen. A value of 1 to a variable of square x,y and digit d indicates that square x,y is to be filled with digit d. Because of our constraints, we are ensured that there will be exactly one variable with value 1 for each square.
 
