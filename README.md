@@ -1,4 +1,4 @@
-# sudoku-solver-by-mip-reduction
+# Sudoku Solver by MIP Reduction
 A sudoku solver based on a reduction to Integer Programming. Written in Python. Uses Python MIP.
 
 # How to use
