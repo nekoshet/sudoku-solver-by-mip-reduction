@@ -8,7 +8,7 @@ A sudoku solver based on a reduction to Integer Programming. Written in Python. 
 4. Run the script using python 3
 
 # How it works
-The script creates an Integer Program representing this specific sudoku problem. The program has 9*9*9 binary variables - a binary variable for each square and digit, representing whether this square is filled with this digit or not. The constraints are as follows:
+The script creates an Integer Program representing this specific sudoku problem. The program has 9x9x9 binary variables - a binary variable for each square and digit, representing whether this square is filled with this digit or not. The constraints are as follows:
 1. Each square contains exactly one digit (no more, no less)
 2. Each row must not contain the same digit more than once.
 3. Each column must not contain the same digit more than once.
