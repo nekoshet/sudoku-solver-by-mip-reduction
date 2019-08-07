@@ -13,6 +13,7 @@ The script creates an Integer Program representing this specific sudoku problem.
 2. Each row must not contain the same digit more than once.
 3. Each column must not contain the same digit more than once.
 4. Each 3x3 'box' must not contain the same digit more than once.
+5. Each square with a predefined digit in the sudoku file must contain this digit.
 
 The object function is irelevant. The object is to find a feasible solution to the program.
 The model is tuned to stop after finding a feasible solution.
