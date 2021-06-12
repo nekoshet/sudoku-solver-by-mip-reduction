@@ -114,6 +114,7 @@ def init_model_variables(model: mip.Model) -> SudokuVariableTensor:
 def create_model(sudoku: SudokuMatrix, verbose: int) -> (mip.Model, SudokuVariableTensor):
     model = mip.Model()
     model.verbose = verbose
+
     variable_tensor = init_model_variables(model)
     add_general_sudoku_constraints(model, variable_tensor)
     add_predefined_digits_constraints(model, variable_tensor, sudoku)
@@ -167,7 +168,7 @@ def solve_sudoku(path: str, timeout_seconds, mip_verbose: int) -> None:
     print(f'Solving sudoku at path {path}, given a timeout of {timeout_seconds} seconds with verbosity {mip_verbose}')
 
     # solve model
-    optimization_status = model.optimize(max_seconds=timeout_seconds)
+    optimization_status = model.optimize(max_seconds=timeout_seconds, max_solutions=1)
 
     # handle status
     handle_optimization_result(optimization_status, variable_tensor)
@@ -179,7 +180,7 @@ def create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
 
     # add input file argument
-    parser.add_argument('ifile', type=str, help='sudoku to solve', metavar='input file')
+    parser.add_argument('ifile', type=str, help='sudoku to solve', metavar='input_file')
 
     # add timeout argument
     parser.add_argument('-t', '--timeout', type=float, default=TIMEOUT_SECONDS_DEFAULT,
